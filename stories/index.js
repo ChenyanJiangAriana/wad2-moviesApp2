@@ -113,6 +113,7 @@ storiesOf("Home Page/FilterControls", module)
   .add("default", () => (
   <MovieDetails movie={sample} />
 ));
-storiesOf("Movie Details Page/MovieHeader", module).add("default", () => (
+storiesOf("Movie Details Page/MovieHeader", module)
+  .add("default", () => (
   <MovieHeader movie={sample} />
 ));
