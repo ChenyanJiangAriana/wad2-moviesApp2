@@ -5,6 +5,7 @@ import HomePage from "./pages/homePage";
 import MoviePage from './pages/movieDetailsPage'
 import { BrowserRouter, Route, Redirect, Switch, Link } from "react-router-dom"    // CHANGED
 import FavoriteMoviesPage from './pages/favoritesMoviesPage'       // NEW
+import MovieReviewPage from "./pages/movieReviewPage";
 
 const sample = {
   adult: false,
@@ -109,6 +110,7 @@ const App = () => {
         </ul>
 
           <Switch>
+            <Route path="/reviews/:id" component={MovieReviewPage} />
             <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
             <Route path="/movies/:id" component={MoviePage} />
             <Route path="/" component={HomePage} />
