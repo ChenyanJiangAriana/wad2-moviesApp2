@@ -5,6 +5,7 @@ import "./moviePage.css";
 
 const MoviePage = props => {
   const { id } = props.match.params
+  //allows the component extract the clicked movie's id from the browser URL address. 
   const [movie, setMovie] = useState(null)
   useEffect(() => {
     fetch(
@@ -14,6 +15,7 @@ const MoviePage = props => {
       setMovie(movie);
     })
   }, [id])
+
   return (
     <>
       {movie ? (
