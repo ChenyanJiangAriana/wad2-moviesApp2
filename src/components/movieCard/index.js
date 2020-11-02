@@ -26,13 +26,13 @@ const MovieCard = props => {
           }
         />
       </Link>
-      <div className="card-footer">
+      {/* <div className="card-footer">
           <button type="button" className="btn w-100 btn-primary"
                 onClick={handleAddToFavorites}
                 >
             Add to Favorites
           </button>
-        </div>
+        </div> */}
         
         <div className="card-body">
           <h4 className="card-title ">{props.movie.title}</h4>
@@ -46,7 +46,9 @@ const MovieCard = props => {
           </p>
         </div>
         <div className="card-footer">
-          <button type="button" className="btn w-100 btn-primary">
+          <button type="button" className="btn w-100 btn-primary"
+          onClick={handleAddToFavorites}
+          >
             Add to Favorites
           </button>
         </div>
