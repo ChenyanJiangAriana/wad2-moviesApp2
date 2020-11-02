@@ -7,13 +7,15 @@ import {getMovie} from '../api/tmdb-api'
 
 const MoviePage = props => {
   const { id } = props.match.params;
-  //allows the component extract the clicked movie's id from the browser URL address. 
-  const [movie, setMovie] = useState(null);
-  useEffect(() => {
-    getMovie(id).then(movie => {
-      setMovie(movie);
-    });
-  }, [id]);
+  const [movie] = useMovie(id) 
+
+  // //allows the component extract the clicked movie's id from the browser URL address. 
+  // const [movie, setMovie] = useState(null);
+  // useEffect(() => {
+  //   getMovie(id).then(movie => {
+  //     setMovie(movie);
+  //   });
+  // }, [id]);
 
   // return (
   //   <>
