@@ -55,9 +55,17 @@ const filterByGenre = (movieList, genreId) =>
             .should("have.text", matchingMovies[index].title);
           })
         })
+        it("the exceptional case when their are no matches", () => {
+          const searchString = "xyz";
+          const matchingMovies = filterByTitle(movies, searchString);
+          cy.get("input").clear().type(searchString);
+          cy.expect(matchingMovies).to.have.length(0);
+        
+        }) 
       })
       describe("By movie genre" ,() => {
         // More later
       })
+
     })
   })
