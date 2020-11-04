@@ -55,5 +55,10 @@ describe("Movie Details Page", () => {
       .should("have.attr", "href")
       .should("include", movie.homepage);
      });
-   });
+ 
 
+   it("should display poster as an image with src attribute", () => {
+    cy.get("img")
+        .should("have.attr", "src");
+     });
+  });
