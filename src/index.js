@@ -8,6 +8,8 @@ import FavoriteMoviesPage from './pages/favoritesMoviesPage'       // NEW
 import MovieReviewPage from "./pages/movieReviewPage";
 import SiteHeader from './components/siteHeader';
 import UpcomingMoviePage from './pages/UpcomingMoviePage';
+import MoviesContextProvider from "./contexts/moviesContext";
+import GenresContextProvider from "./contexts/genresContext";
 
 const sample = {
   adult: false,
@@ -98,6 +100,8 @@ const App = () => {
       <div className="jumbotron">
           <SiteHeader />      {/* New Header  */}
         <div className="container-fluid">
+        <MoviesContextProvider>     {/* NEW  */}
+          <GenresContextProvider>    {/* NEW */}
           <Switch>
             <Route path="/reviews/:id" component={MovieReviewPage} />
             <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
@@ -106,6 +110,8 @@ const App = () => {
             <Route path="/" component={HomePage} />
             <Redirect from="*" to="/" />
           </Switch>
+          </GenresContextProvider>    {/* NEW */}
+          </MoviesContextProvider>     {/* NEW */}
         </div>
       </div>
     </BrowserRouter>
