@@ -101,6 +101,7 @@ const App = () => {
       <div className="jumbotron">
           <SiteHeader />      {/* New Header  */}
         <div className="container-fluid">
+     
         <MoviesContextProvider>     {/* NEW  */}
           <GenresContextProvider>    {/* NEW */}
           <Switch>
@@ -114,6 +115,7 @@ const App = () => {
           </Switch>
           </GenresContextProvider>    {/* NEW */}
           </MoviesContextProvider>     {/* NEW */}
+
         </div>
       </div>
     </BrowserRouter>
