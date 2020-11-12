@@ -2,15 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import HomePage from "./pages/homePage";
-import MoviePage from './pages/movieDetailsPage'
+import MoviePage from './pages/movieDetailsPage';
 import { BrowserRouter, Route, Redirect, Switch, Link } from "react-router-dom"    // CHANGED
-import FavoriteMoviesPage from './pages/favoritesMoviesPage'       // NEW
+import FavoriteMoviesPage from './pages/favoritesMoviesPage';       // NEW
 import MovieReviewPage from "./pages/movieReviewPage";
 import SiteHeader from './components/siteHeader';
 import UpcomingMoviePage from './pages/UpcomingMoviePage';
 import MoviesContextProvider from "./contexts/moviesContext";
 import GenresContextProvider from "./contexts/genresContext";
-import AddMovieReviewPage from './pages/addMovieReviewPage'
+import AddMovieReviewPage from './pages/addMovieReviewPage';
+import watchListMoviesPage from './pages/watchListMoviesPage';
 
 const sample = {
   adult: false,
@@ -105,6 +106,7 @@ const App = () => {
         <MoviesContextProvider>     {/* NEW  */}
           <GenresContextProvider>    {/* NEW */}
           <Switch>
+          <Route exact path="/movies/watchlist" component={watchListMoviesPage} />
             <Route exact path="/reviews/form" component={AddMovieReviewPage} />
             <Route path="/reviews/:id" component={MovieReviewPage} />
             <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />

@@ -6,7 +6,7 @@ const AddToWatchListButton = ({ movie }) => {
 
   const handleAddToWathchListButton = e => {
     e.preventDefault();
-    context.AddToWatchListButton(movie.id);
+    context.addToWatchList(movie.id);
   };
   return (    
   <button
@@ -14,7 +14,7 @@ const AddToWatchListButton = ({ movie }) => {
       className="btn w-100 btn-primary"
       onClick={handleAddToWathchListButton}
     >
-      Add to Watch List Button
+      Add to Watch List 
     </button>
   );
 };
