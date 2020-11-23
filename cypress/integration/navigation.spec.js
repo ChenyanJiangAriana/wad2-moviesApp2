@@ -37,14 +37,14 @@ describe("Navigation", () => {
     it("should allow navigation from site header", () => {
       cy.get("nav").find("li").eq(0).find("a").click();
       cy.url().should("not.include", `/favorites`);
-      cy.get("h2").contains("Discover Movies");
+      cy.get("h2").contains("No. Movies");
       cy.get("nav").find("li").eq(1).find("a").click();
       cy.url().should("not.include", `/favorites`);
       cy.get("h2").contains("Upcoming Movies");
       cy.get("nav").find("li").eq(2).find("a").click();
       cy.get("nav.navbar-brand").find("a").click();
       cy.url().should("not.include", `/favorites`);
-      cy.get("h2").contains("Discover Movies");
+      cy.get("h2").contains("No. Movies");
     });
   });
 
@@ -70,7 +70,7 @@ describe("Navigation", () => {
     beforeEach(() => {
       cy.visit("/");
       cy.get(".card").eq(0).find("button").click();
-      cy.get("nav").find("li").eq(2).find("a").click();
+      cy.get("nav").find("li").eq(3).find("a").click();
     });
     it("should navigate to the movies detail page and change the browser URL", () => {
       cy.get(".card").eq(0).find("img").click();
@@ -87,18 +87,16 @@ describe("Navigation", () => {
       cy.get(".card").eq(1).find("img").click();
       cy.get("svg[data-icon=arrow-circle-left]").click();
       cy.url().should("not.include", `/movies`);
-      cy.get("h2").contains("Discover Movies");
+      cy.get("h2").contains("No. Movies");
     });
     it("should navigate from favorites page to movie details and back", () => {
-        cy.get(".card").eq(1).find("button").click();
-        cy.get(".card").eq(0).find("button").click();
-        cy.get("nav").find("li").eq(2).find("a").click();
+        cy.contains("Add to Favorites").click();
+        cy.contains("Favorites").click();
         cy.get(".card").eq(0).find("img").click();
         cy.get("svg[data-icon=arrow-circle-left]").click();
-        cy.url().should("include", `/movies/favorites`);
+        cy.url().should("include", `/favorites`);
         cy.get("h2").contains("Favorite Movies");
     });
   });
 });
-
 
