@@ -50,7 +50,7 @@ describe("Navigation", () => {
 
   describe("From the Movie Details page ", () => {
     beforeEach(() => {
-      cy.visit(`/movies/${movieId}`);
+      cy.visit("/movies/${movieId}");
     });
     it("should change browser URL when show/hide reviews is clicked", () => {
       cy.contains("Show Reviews").click();
