@@ -27,6 +27,11 @@ describe("Movie Details Page", () => {
         return movieDetails.id;
       })
   });
+
+
+
+
+
   beforeEach(() => {
     cy.visit(`/`);
     cy.get(".card").eq(2).find("img").click();
