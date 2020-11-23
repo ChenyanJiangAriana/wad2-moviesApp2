@@ -13,8 +13,6 @@ import GenresContextProvider from "./contexts/genresContext";
 import AddMovieReviewPage from './pages/addMovieReviewPage';
 import watchListMoviesPage from './pages/watchListMoviesPage';
 
-const movies = [sample, sample, sample];
-
 const App = () => {
   return (
     <BrowserRouter>
