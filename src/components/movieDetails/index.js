@@ -1,7 +1,7 @@
 import React from "react";
 import "./movieDetails.css";
 
-export default ({ movie }) => {
+export default ({movie}) => {
   return (
     <>
       <h4>Overview</h4>
@@ -64,15 +64,6 @@ export default ({ movie }) => {
           </li>
         ))}
       
-      
-        <li key="slh" className="list-group-item list-group-item-dark">
-          Production Countries
-        </li>
-        {movie.production_countries.map(coun => (
-          <li key={coun.name} className="list-group-item">
-            {coun.name}
-          </li>
-        ))}
       </ul>
 
 
