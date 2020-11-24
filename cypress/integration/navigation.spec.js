@@ -37,7 +37,15 @@ describe("Navigation", () => {
     it("should allow navigation from site header", () => {
       cy.get("nav").find("li").eq(0).find("a").click();
       cy.url().should("not.include", `/favorites`);
+<<<<<<< HEAD
+<<<<<<< HEAD
       cy.get("h2").contains("No. Movies");
+=======
+      cy.get("h2").contains("Favorite Movies");
+>>>>>>> demobranch
+=======
+      cy.get("h2").contains("Favorite Movies");
+>>>>>>> demobranch
       cy.get("nav").find("li").eq(1).find("a").click();
       cy.url().should("not.include", `/favorites`);
       cy.get("h2").contains("Upcoming Movies");
