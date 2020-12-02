@@ -6,11 +6,7 @@ stages:
   - install
   - build
   - test
-<<<<<<< HEAD
-
-=======
   
->>>>>>> demobranch
 variables:
    npm_config_cache: "$CI_PROJECT_DIR/.npm"
    CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/cache/Cypress"
