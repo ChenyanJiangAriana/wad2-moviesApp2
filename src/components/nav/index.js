@@ -1,4 +1,3 @@
-
 import React from 'react';
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
@@ -12,6 +11,8 @@ import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import BookIcon from "@material-ui/icons/Book";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+import { withRouter } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   list: {
@@ -23,6 +24,7 @@ const useStyles = makeStyles({
 });
 
 export function TemporaryDrawer() {
+  //Const {history} = props;
   const classes = useStyles();
   const [state, setState] = React.useState({
     top: false,
@@ -52,25 +54,25 @@ export function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["Favorite Movies", "WatchList"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <FavoriteBorderIcon /> : <BookIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+         <ListItem>
+           <ListItemIcon><FavoriteBorderIcon/> </ListItemIcon>
+           <Link to="/movies/favorites">Favorite Movies</Link>
+           <ListItemText />
+         </ListItem>
+         <ListItem>
+           <ListItemIcon><BookIcon/> </ListItemIcon>
+           <Link to="/movies/watchlist">Watch List</Link>
+           <ListItemText />
+         </ListItem>
       </List>
+     
       <Divider />
       <List>
-        {["Home Page", "Cast", "Search"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <BookIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+         <ListItem>
+           <ListItemIcon><InboxIcon/></ListItemIcon>
+           <Link to="/">HomePage</Link>
+           <ListItemText />
+         </ListItem>
       </List>
     </div>
   );
@@ -90,12 +92,9 @@ export function TemporaryDrawer() {
         </React.Fragment>
       ))}
     </div>
-
-
-
   );
 }
 
-export default TemporaryDrawer;
-//ReactDOM.render(<Demo />, document.querySelector('#root'));
+export default withRouter(TemporaryDrawer);
+
     
