@@ -11,20 +11,8 @@ const reducer = (state, action) => {
           m.id === action.payload.movie.id ? { ...m, favorite: true } : m
         ),
         upcoming: [...state.upcoming],//exercise3
-        topRated: [...state.topRated],
-        nowPlaying: [...state.nowPlaying]//project
       };
     
-    case "add-watchlist":
-        return {
-          upcoming: state.upcoming.map((m) =>
-            m.id === action.payload.movie.id ? { ...m, watchlist: true } : m
-          ),
-          movies: [...state.movies],
-          topRated: [...state.topRated],//project
-          nowPlaying: [...state.nowPlaying]
-        };//exercise4
-
     case "load":
       return { movies: action.payload.movies, upcoming: [...state.upcoming], topRated: [...state.topRated], nowPlaying: [...state.nowPlaying]};//
     case "load-upcoming":
@@ -41,9 +29,19 @@ const reducer = (state, action) => {
             : m
         ),
         upcoming: [...state.upcoming],//
-        topRated: [...state.topRated], 
-        nowPlaying: [...state.nowPlaying]//project
       };
+
+      case "add-watchlist":
+        return {
+          upcoming: state.upcoming.map((m) =>
+            m.id === action.payload.movie.id ? { ...m, upcoming: true } : m
+          ),
+          movies: [...state.movies],
+          nowplaying: state.nowplaying.map((m) =>
+          m.id === action.payload.nowplaying.id ? { ...m, nowplaying: true } : m
+        )
+        };//exercise4
+
     
     default:
       return state;
@@ -104,6 +102,7 @@ const MoviesContextProvider = (props) => {
         addToFavorites: addToFavorites,
         addToWatchList: addToWatchList,//exercise4
         addReview: addReview, 
+
         topRated: state.topRated,
         nowPlaying: state.nowPlaying
       }}

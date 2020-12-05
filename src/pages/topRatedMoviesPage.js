@@ -6,7 +6,8 @@ import AddToWatchListButton from '../components/buttons/addToWatchList'
 const TopRatedMoviesPage = () => {
   const context = useContext(MoviesContext);
   const topRated = context.topRated.filter((m) => {    
-    return !("watchlist" in m);                             //TODO watchlist button needs to be fixed
+    return !("watchlist" in m);  
+                               //TODO watchlist button needs to be fixed
   });
 
   return (

@@ -18,11 +18,14 @@ import TemporaryDrawer from './components/nav';
 
 const App = () => {
   return (
+
+
+
+   
     <BrowserRouter>
       <div className="jumbotron">
-        <TemporaryDrawer/>  <SiteHeader />      {/* New Header  */}
+        <TemporaryDrawer/>  <SiteHeader />   {/* New Header  */}
         <div className="container-fluid">
-         
      
         <MoviesContextProvider>     {/* NEW  */}
           <GenresContextProvider>    {/* NEW */}

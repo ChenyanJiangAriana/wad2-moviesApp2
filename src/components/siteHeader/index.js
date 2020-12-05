@@ -4,12 +4,13 @@ import "../../globals/fontawesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./siteHeader.css";
 
+
 const SiteHeader = () => {
   return (
     <nav className="navbar  navbar-light fixed-top  bg-dark ">
       <nav className="navbar-brand text-white">
         <Link className=" text-white" to="/">
-          TMDB Client
+          TMDB
         </Link>
       </nav>
       <FontAwesomeIcon
@@ -37,7 +38,7 @@ const SiteHeader = () => {
              Upcoming
             </Link>
           </li>
-          
+{/*           
           <li className="nav-item">
             <Link className="nav-link text-white" to="/movies/watchlist">
               Watch List
@@ -48,7 +49,7 @@ const SiteHeader = () => {
             <Link className="nav-link text-white" to="/movies/favorites">
               Favorites
             </Link>
-          </li>
+          </li> */}
 
           <li className="nav-item">
             <Link className="nav-link text-white" to="/movies/topRated">

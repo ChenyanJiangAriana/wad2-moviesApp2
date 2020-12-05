@@ -24,7 +24,6 @@ const useStyles = makeStyles({
 });
 
 export function TemporaryDrawer() {
-  //Const {history} = props;
   const classes = useStyles();
   const [state, setState] = React.useState({
     top: false,
@@ -66,11 +65,18 @@ export function TemporaryDrawer() {
          </ListItem>
       </List>
      
-      <Divider />
+      <Divider/>
       <List>
          <ListItem>
            <ListItemIcon><InboxIcon/></ListItemIcon>
            <Link to="/">HomePage</Link>
+           <ListItemText />
+         </ListItem>
+      </List>
+      <List>
+         <ListItem>
+           <ListItemIcon><InboxIcon/></ListItemIcon>
+           <Link to="/">Trending People</Link>
            <ListItemText />
          </ListItem>
       </List>
@@ -79,7 +85,7 @@ export function TemporaryDrawer() {
 
   return (
     <div>
-      {["Menu"].map((anchor) => (
+      {(["Menu"]).map((anchor) => (
         <React.Fragment key={anchor}>
           <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
           <Drawer
