@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import {MoviesContext} from "../../contexts/moviesContext";
-
+import Button from "@material-ui/core/Button";
 const AddToFavoriteButton = ({ movie }) => {
   const context = useContext(MoviesContext);
 
@@ -8,14 +8,14 @@ const AddToFavoriteButton = ({ movie }) => {
     e.preventDefault();
     context.addToFavorites(movie.id);
   };
-  return (    <button
-      type="button"
-      className="btn w-100 btn-primary"
+  return (    
+  <Button variant="contained" color="primary"
       onClick={handleAddToFavorite}
     >
       Add to Favorites
-    </button>
+    </Button>
   );
 };
 
 export default AddToFavoriteButton;
+//ReactDOM.render(<AddToFavoriteButton/>,document.querySelector("#AddToFavoriteButton"))

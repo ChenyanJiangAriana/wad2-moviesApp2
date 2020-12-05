@@ -14,13 +14,15 @@ import AddMovieReviewPage from './pages/addMovieReviewPage';
 import watchListMoviesPage from './pages/watchListMoviesPage';
 import TopRatedMoviesPage from './pages/topRatedMoviesPage';
 import NowPlayingMoviesPage from './pages/nowPlayingMoviesPage';
+import TemporaryDrawer from './components/nav';
 
 const App = () => {
   return (
     <BrowserRouter>
       <div className="jumbotron">
-          <SiteHeader />      {/* New Header  */}
+        <TemporaryDrawer/>  <SiteHeader />      {/* New Header  */}
         <div className="container-fluid">
+         
      
         <MoviesContextProvider>     {/* NEW  */}
           <GenresContextProvider>    {/* NEW */}
