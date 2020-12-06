@@ -11,22 +11,22 @@ import UpcomingMoviePage from './pages/UpcomingMoviePage';
 import MoviesContextProvider from "./contexts/moviesContext";
 import GenresContextProvider from "./contexts/genresContext";
 import AddMovieReviewPage from './pages/addMovieReviewPage';
-import watchListMoviesPage from './pages/watchListMoviesPage';
+import WatchListMoviesPage from './pages/watchListMoviesPage';
 import TopRatedMoviesPage from './pages/topRatedMoviesPage';
 import NowPlayingMoviesPage from './pages/nowPlayingMoviesPage';
 import TemporaryDrawer from './components/nav';
 import SlideNowPlaying from './components/slideNowPlaying';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import NewFilterButton from './components/newFilterButton';
+import  from ""
 const App = () => {
   return (
-   
+
     <BrowserRouter>
     
       <div className="jumbotron">
         <TemporaryDrawer/>
-        
-        <SiteHeader />
+        <SiteHeader/>
         <SlideNowPlaying/>
         
         <NewFilterButton/> {/* New Header  */}
@@ -35,7 +35,7 @@ const App = () => {
         <MoviesContextProvider>     {/* NEW  */}
           <GenresContextProvider>    {/* NEW */}
           <Switch>
-          <Route exact path="/movies/watchlist" component={watchListMoviesPage} />
+          <Route exact path="/movies/watchlist" component={WatchListMoviesPage} />
             <Route exact path="/reviews/form" component={AddMovieReviewPage} />
             <Route path="/reviews/:id" component={MovieReviewPage} />
             <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />

@@ -13,6 +13,7 @@
     "bootstrap": "^4.5.3",
     "clsx": "^1.1.1",
     "dotenv": "^8.2.0",
+    "firebase": "^8.1.2",
     "fontsource-roboto": "^3.0.3",
     "react": "^16.11.0",
     "react-bootstrap": "^1.4.0",
