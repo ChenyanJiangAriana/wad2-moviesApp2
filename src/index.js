@@ -17,14 +17,14 @@ import NowPlayingMoviesPage from './pages/nowPlayingMoviesPage';
 import TemporaryDrawer from './components/nav';
 import SlideNowPlaying from './components/slideNowPlaying';
 import 'bootstrap/dist/css/bootstrap.min.css'
-
+import NewFilterButton from './components/newFilterButton';
 const App = () => {
   return (
    
     <BrowserRouter>
     
       <div className="jumbotron">
-        <TemporaryDrawer/>  <SiteHeader />  <SlideNowPlaying/> {/* New Header  */}
+        <TemporaryDrawer/>  <SiteHeader />  <SlideNowPlaying/><NewFilterButton/> {/* New Header  */}
         <div className="container-fluid">
      
         <MoviesContextProvider>     {/* NEW  */}

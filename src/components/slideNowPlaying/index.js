@@ -15,7 +15,8 @@ export function SlideNowPlaying() {
         fetchAPI();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
-    
+
+    //use cariusel-caption to make the text of item.title show up
     const nowPlayingMovies = nowPlaying.slice( 0, 5 ).map((item, index) => {
         return(
             <div style={{height:500, width:"100%"}} key={index}>
@@ -25,7 +26,7 @@ export function SlideNowPlaying() {
                 <div className ="carousel-center">
                     <i className ="far fa-play-circle" style={{fontSize:95,color:"#f4c10f"}}></i>
                 </div>
-                <div className="carousel-captain" style={{textAlign:"center", fontSize:30}}>{item.title}</div>
+                <div className="carousel-caption" style={{textAlign:"center", fontSize:30}}>{item.title}</div>
             </div>
         );
     });
