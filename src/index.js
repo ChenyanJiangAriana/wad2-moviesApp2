@@ -24,8 +24,13 @@ const App = () => {
     <BrowserRouter>
     
       <div className="jumbotron">
-        <TemporaryDrawer/>  <SiteHeader />  <SlideNowPlaying/><NewFilterButton/> {/* New Header  */}
-        <div className="container-fluid">
+        <TemporaryDrawer/>
+        
+        <SiteHeader />
+        <SlideNowPlaying/>
+        
+        <NewFilterButton/> {/* New Header  */}
+      <div className="container-fluid">
      
         <MoviesContextProvider>     {/* NEW  */}
           <GenresContextProvider>    {/* NEW */}

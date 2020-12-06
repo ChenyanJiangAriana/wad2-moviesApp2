@@ -2,6 +2,7 @@ import React,{useState, useEffect} from "react";
 import {getGenres} from "../../api/tmdb-api";
 import {withRouter} from "react-router-dom";
 import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";//add the arrow in each side of the slide
+import "./newFilterButton.css";
 export function NewFilterButton() {
     const [genres, setGenres] = useState([]);
 
