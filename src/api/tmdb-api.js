@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export const getMovies = () => {
     return fetch(
       `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&page=1`
@@ -54,20 +56,33 @@ export const getMovies = () => {
       .then(json => json.results);
   };
 
-  export const getPerson = () => {
-    return fetch(
-      `https://api.themoviedb.org/3/trending/person/week?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1` 
-    )
-      .then(res => res.json())
-      .then(json => json.results);
-  };
+  // export const getPerson = () => {
+  //   return fetch(
+  //     `https://api.themoviedb.org/3/trending/person/week?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1` 
+  //   )
+  //     .then(res => res.json())
+  //     .then(json => json.results);
+  // };
 
-  export const getPersons = () => {
-    return fetch(
-      `https://api.themoviedb.org/3/trending/person/week?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1` 
-    )
-      .then(res => res.json())
-      .then(json => json.results);
-  };
-
-
+  // export const getPersons = () => {
+  //   return fetch(
+  //     `https://api.themoviedb.org/3/trending/person/week?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1` 
+  //   )
+  //     .then(res => res.json())
+  //     .then(json => json.results);
+  // };
+  export const fetchMovies = async () => {
+    const {data} = await axios.get(
+      `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1` )
+            const modifiedData = data['results'].map((m) => ({
+            id: m['id'],
+            backPoster: 'https://image.tmdb.org/t/p/original/' + m['backdrop_path'],
+            popularity: m['popularith'],
+            title: m['title'],
+            poster: 'https://image.tmdb.org/t/p/original/' + m['poster_path'],
+            overview: m['overview'],
+            rating: m['vote_average'],
+        }))
+        return modifiedData;
+      }   
+    

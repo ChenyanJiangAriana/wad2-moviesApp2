@@ -10,6 +10,7 @@ const MovieListPage = () => {
   });
 
   return (
+    
     <PageTemplate
       title="No. Movies"
       movies={movies}  /* Changed */

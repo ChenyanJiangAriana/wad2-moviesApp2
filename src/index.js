@@ -15,16 +15,16 @@ import watchListMoviesPage from './pages/watchListMoviesPage';
 import TopRatedMoviesPage from './pages/topRatedMoviesPage';
 import NowPlayingMoviesPage from './pages/nowPlayingMoviesPage';
 import TemporaryDrawer from './components/nav';
+import SlideLatest from './components/slideLatest';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const App = () => {
   return (
-
-
-
    
     <BrowserRouter>
+    
       <div className="jumbotron">
-        <TemporaryDrawer/>  <SiteHeader />   {/* New Header  */}
+        <TemporaryDrawer/>  <SiteHeader />  <SlideLatest/> {/* New Header  */}
         <div className="container-fluid">
      
         <MoviesContextProvider>     {/* NEW  */}
@@ -50,4 +50,4 @@ const App = () => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App/>, document.getElementById("root"));
