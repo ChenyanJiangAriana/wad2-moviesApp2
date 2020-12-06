@@ -15,7 +15,7 @@ import watchListMoviesPage from './pages/watchListMoviesPage';
 import TopRatedMoviesPage from './pages/topRatedMoviesPage';
 import NowPlayingMoviesPage from './pages/nowPlayingMoviesPage';
 import TemporaryDrawer from './components/nav';
-import SlideLatest from './components/slideLatest';
+import SlideNowPlaying from './components/slideNowPlaying';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const App = () => {
@@ -24,7 +24,7 @@ const App = () => {
     <BrowserRouter>
     
       <div className="jumbotron">
-        <TemporaryDrawer/>  <SiteHeader />  <SlideLatest/> {/* New Header  */}
+        <TemporaryDrawer/>  <SiteHeader />  <SlideNowPlaying/> {/* New Header  */}
         <div className="container-fluid">
      
         <MoviesContextProvider>     {/* NEW  */}

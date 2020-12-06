@@ -71,9 +71,9 @@ export const getMovies = () => {
   //     .then(res => res.json())
   //     .then(json => json.results);
   // };
-  export const fetchMovies = async () => {
+  export const fetchNowPlayingMovies = async () => {
     const {data} = await axios.get(
-      `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1` )
+      `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1` )
             const modifiedData = data['results'].map((m) => ({
             id: m['id'],
             backPoster: 'https://image.tmdb.org/t/p/original/' + m['backdrop_path'],

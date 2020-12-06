@@ -1,14 +1,14 @@
 import React,{useState, useEffect} from "react";
 import RBCarousel from "react-bootstrap-carousel";
-import { fetchMovies } from "../../api/tmdb-api";
+import { fetchNowPlayingMovies } from "../../api/tmdb-api";
 import {withRouter} from "react-router-dom";
-
-export function SlideLatest() {
+import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";//add the arrow in each side of the slide
+export function SlideNowPlaying() {
     const [nowPlaying, setNowPlaying] = useState([]);
 
     useEffect(()=> {
         const fetchAPI = async() =>{
-            setNowPlaying(await fetchMovies());
+            setNowPlaying(await fetchNowPlayingMovies());
         };
       //  console.log("nowplaying.....",nowPlaying);
       //  console.log("fetchapi.....",fetchAPI);
@@ -16,19 +16,24 @@ export function SlideLatest() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
     
-    const movies = nowPlaying.slice( 0, 5 ).map((item, index) => {
+    const nowPlayingMovies = nowPlaying.slice( 0, 5 ).map((item, index) => {
         return(
-            <div key={index}>
+            <div style={{height:500, width:"100%"}} key={index}>
                 <div className ="carousel-center">
                     <img style={{height:600}} src={item.backPoster} alt ={item.title}/>
                 </div>
+                <div className ="carousel-center">
+                    <i className ="far fa-play-circle" style={{fontSize:95,color:"#f4c10f"}}></i>
+                </div>
+                <div className="carousel-captain" style={{textAlign:"center", fontSize:30}}>{item.title}</div>
             </div>
         );
     });
-
+//adjust the vertical distance between rows
     return (
         <div className="container">
-            <div className="row">
+            <div className="row mt-2">
+                
                 <div className="col">
                     <RBCarousel
                          autoplay= {true}
@@ -37,10 +42,10 @@ export function SlideLatest() {
                          version={4}
                          indicators={false}
                      >
-                         {movies}    
+                         {nowPlayingMovies}    
                     </RBCarousel>
                 </div>
             </div>
         </div>
     )
-}export default withRouter(SlideLatest);
+}export default withRouter(SlideNowPlaying);
