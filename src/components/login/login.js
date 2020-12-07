@@ -1,5 +1,4 @@
 import React from "react";
-
 const Login =(props) =>{
             const {email,
                 setEmail,
@@ -16,10 +15,16 @@ const Login =(props) =>{
         <section className ="login">
            <div className = "loginContainer">
                 <label>Username</label>
-                <input type ="text" autoFocus required value={email} onchange={(e)=> setEmail(e.target.value)}/>
+                <input type ="text" 
+                        autoFocus 
+                        required 
+                        value={email} 
+                        onChange={(e)=> setEmail(e.target.value)}
+                />
+                
                 <p className ="errorMsg">{emailError}</p>
                 <label>Password</label>
-                <input type="password" required value={password} onchange={(e)=> setPassword(e.target.value)}/>
+                <input type="password" required value={password} onChange={(e)=> setPassword(e.target.value)}/>
                 <p className ="errorMsg">{passwordError}</p>
                 <div className="btnContainer">
                     {hasAccount ? (
@@ -29,7 +34,7 @@ const Login =(props) =>{
                         </>
                     ) : (
                         <>
-                        <button onclick={handleSignup}>Sign up</button>
+                        <button onClick={handleSignup}>Sign up</button>
                         <p>Have an account?<span onClick={()=>setHasAccount(!hasAccount)}>Sign in</span></p>
                         </>
                     )}

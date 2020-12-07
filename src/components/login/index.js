@@ -17,11 +17,11 @@ export const LoginApp=() =>{
     const clearInputs =() =>{
         setEmail('');
         setPassword('');
-    };
+    }
     const clearErrors =() =>{
         setEmailError('');
         setPasswordError('');
-    };
+    }
 
     const handleLogin =()=>{
         clearErrors();
@@ -83,7 +83,7 @@ export const LoginApp=() =>{
 
     useEffect(()=>{
         authListener();
-    }, []);
+    },[]);
 
     return(
         <div className = "App">
@@ -92,7 +92,7 @@ export const LoginApp=() =>{
             ):(
                 <Login
                 email={email} 
-                setEmail ={email} 
+                setEmail ={setEmail} 
                 password ={password} 
                 setPassword ={setPassword}
                 handleLogin ={handleLogin}

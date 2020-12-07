@@ -1,7 +1,7 @@
 import firebase from "firebase";
+require('firebase/auth');
 // must be listed before other Firebase SDKs
-import "firebase/app";
-import "firebase/auth";
+require('firebase/app');
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   var firebaseConfig = {
