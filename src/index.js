@@ -18,17 +18,16 @@ import TemporaryDrawer from './components/nav';
 import SlideNowPlaying from './components/slideNowPlaying';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import NewFilterButton from './components/newFilterButton';
+import LoginApp from "./components/login";
 
 const App = () => {
   return (
-
-    <BrowserRouter>
-    
+      <BrowserRouter>
+           <div><LoginApp/></div>
       <div className="jumbotron">
         <TemporaryDrawer/>
         <SiteHeader/>
         <SlideNowPlaying/>
-        
         <NewFilterButton/> {/* New Header  */}
       <div className="container-fluid">
      
@@ -43,7 +42,9 @@ const App = () => {
             <Route exact path="/movies/topRated" component={TopRatedMoviesPage} />
             <Route path="/movies/Upcoming" component={UpcomingMoviePage} />
             <Route path="/movies/:id" component={MoviePage} />
+            {/* <Route path="/" component={loginPage}/> */}
             <Route path="/" component={HomePage} />
+            
             <Redirect from="*" to="/" />
           </Switch>
           </GenresContextProvider>    {/* NEW */}
