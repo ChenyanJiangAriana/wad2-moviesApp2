@@ -9,8 +9,13 @@ const SiteHeader = () => {
   return (
     <nav className="navbar  navbar-light fixed-top  bg-dark ">
       <nav className="navbar-brand text-white">
+        <link className=" text-white" to="/">
+          
+        </link>
+      </nav>
+      <nav className="navbar-brand text-white">
         <Link className=" text-white" to="/">
-          TMDB
+          Logout
         </Link>
       </nav>
       <FontAwesomeIcon
