@@ -3,20 +3,24 @@ import { Link } from "react-router-dom";
 import "../../globals/fontawesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./siteHeader.css";
-
+import { TemporaryDrawer } from "../nav";
 
 const SiteHeader = () => {
   return (
     <nav className="navbar  navbar-light fixed-top  bg-dark ">
       <nav className="navbar-brand text-white">
         <link className=" text-white" to="/">
-          
         </link>
       </nav>
+
+      <TemporaryDrawer/>
+      
       <nav className="navbar-brand text-white">
+      <button>
         <Link className=" text-white" to="/">
           Logout
         </Link>
+      </button>
       </nav>
       <FontAwesomeIcon
         className="navbar-text text-light"

@@ -27,9 +27,6 @@ export function TemporaryDrawer() {
   const classes = useStyles();
   const [state, setState] = React.useState({
     top: false,
-    left: false,
-    bottom: false,
-    right: false
   });
 
   const toggleDrawer = (anchor, open) => (event) => {
@@ -56,7 +53,7 @@ export function TemporaryDrawer() {
          <ListItem>
            <ListItemIcon><FavoriteBorderIcon/> </ListItemIcon>
            <Link to="/movies/favorites">Favorite Movies</Link>
-           <ListItemText />
+           <ListItemText/>
          </ListItem>
          <ListItem>
            <ListItemIcon><BookIcon/> </ListItemIcon>

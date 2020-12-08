@@ -64,13 +64,20 @@ export const getMovies = () => {
   //     .then(json => json.results);
   // };
 
-  // export const getPersons = () => {
-  //   return fetch(
-  //     `https://api.themoviedb.org/3/trending/person/week?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1` 
-  //   )
-  //     .then(res => res.json())
-  //     .then(json => json.results);
-  // };
+  export const getPerson = id => {
+    return fetch(
+        `https://api.themoviedb.org/3/person/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`
+    ).then(res => res.json())
+}
+
+  export const getMovieCast = id => {
+    return fetch(
+        `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`
+    )
+    .then(res => res.json())
+    .then(json => json.cast);
+}
+
   export const fetchNowPlayingMovies = async () => {
     const {data} = await axios.get(
       `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1` )
