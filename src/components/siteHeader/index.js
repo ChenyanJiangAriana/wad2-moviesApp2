@@ -12,15 +12,10 @@ const SiteHeader = () => {
         <link className=" text-white" to="/">
         </link>
       </nav>
-
-      <TemporaryDrawer/>
       
+      <TemporaryDrawer/>
       <nav className="navbar-brand text-white">
-      <button>
-        <Link className=" text-white" to="/">
-          Logout
-        </Link>
-      </button>
+      
       </nav>
       <FontAwesomeIcon
         className="navbar-text text-light"

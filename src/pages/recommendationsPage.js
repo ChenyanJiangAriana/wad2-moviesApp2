@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PageTemplate from '../components/templateMovieListPage'
 //import {MoviesContext} from '../contexts/moviesContext'
-import AddToWantListButton from '../components/buttons/addToWantList'
+import AddToWatchListButton from '../components/buttons/addToWatchList'
 import { withRouter } from "react-router-dom";
 import {getRecommendationsMovies} from '../api/tmdb-api'
 
@@ -16,7 +16,7 @@ const RecommendationsPage = (props) => {
       title="Recommendations Movies"
       movies={movies}  /* Changed */
       action={(movie) => {
-        return <AddToWantListButton movie={movie} />;
+        return <AddToWatchListButton movie={movie} />;
       }}
     />
     

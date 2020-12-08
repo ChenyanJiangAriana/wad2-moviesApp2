@@ -13,11 +13,11 @@ import AddMovieReviewPage from '../pages/addMovieReviewPage';
 import WatchListMoviesPage from '../pages/watchListMoviesPage';
 import TopRatedMoviesPage from '../pages/topRatedMoviesPage';
 import NowPlayingMoviesPage from '../pages/nowPlayingMoviesPage';
-import TemporaryDrawer from '../components/nav';
 import SlideNowPlaying from '../components/slideNowPlaying';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import NewFilterButton from '../components/newFilterButton';
-import RecommendationsPage from  '../pages/RecommendationsPage';
+import RecommendationsPage from  '../pages/recommendationsPage';
+
 //import ReactStars from "react-rating-stars-component";
 //import withRouter from 'react-router-dom';
 //import ReactDOM from "react-dom";
@@ -26,44 +26,42 @@ export const Hero =({handleLogout})=>{
     return(
 <div>
     <BrowserRouter>
-      <div>  
-      <SiteHeader/>
-      <nav>
-          <section className ="hero">
-                 <h2>welcome</h2><h2> <TemporaryDrawer/></h2>
-                 <button onClick={handleLogout}>Logout</button> 
+      <div className="row mt-3 mb-5">
+          <div className="col-md- col-sm-5" style={{ color: "#603bbb" }}><SiteHeader/></div></div>
+               <section >
+                    <p><SlideNowPlaying/><NewFilterButton/></p>
+                    <button onClick={handleLogout}>Logout</button> 
+               </section>  
+         
+       
+        <div className="jumbotron">
+             {/* New Header  */}
+            <div className="container-fluid">
 
-            <p><SlideNowPlaying/>
-            <NewFilterButton/></p>
-          </section>  
-          
-       </nav> 
-      </div>
-      <div className="jumbotron">
-         {/* New Header  */}
-        <div className="container-fluid">
-     
-          <MoviesContextProvider>     {/* NEW  */}
-            <GenresContextProvider>    {/* NEW */}
-              <Switch>
-                 <Route exact path="/movies/watchlist" component={WatchListMoviesPage} />
-                 <Route exact path="/reviews/form" component={AddMovieReviewPage} />
-                 <Route path="/reviews/:id" component={MovieReviewPage} />
-                 <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
-                 <Route path="/movies/nowPlaying" component={NowPlayingMoviesPage} />
-                 <Route path="/movies/topRated" component={TopRatedMoviesPage} />
-                 <Route path="/movies/Upcoming" component={UpcomingMoviePage} />
-                 <Route path="/movies/:id" component={MoviePage} />
-                 <Route path="/movies/recommendations/:id" component={RecommendationsPage} />
-                 <Route path="/" component={HomePage} />
-                 <Redirect from="*" to="/" />
-              </Switch>
-           </GenresContextProvider>    {/* NEW */}
-          </MoviesContextProvider>     {/* NEW */}
-
+            
+              <MoviesContextProvider>     {/* NEW  */}
+                 <GenresContextProvider>    {/* NEW */}
+                    <Switch>
+                        <Route exact path="/movies/watchlist" component={WatchListMoviesPage} />
+                        <Route exact path="/reviews/form" component={AddMovieReviewPage} />
+                        <Route path="/reviews/:id" component={MovieReviewPage} />
+                        <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
+                        <Route path="/movies/nowPlaying" component={NowPlayingMoviesPage} />
+                        <Route path="/movies/topRated" component={TopRatedMoviesPage} />
+                        <Route path="/movies/Upcoming" component={UpcomingMoviePage} />
+                 
+                        <Route path="/movies/:id" component={MoviePage} />
+                        <Route path="/movies/recommendations/:id" component={RecommendationsPage} />
+                        <Route path="/" component={HomePage} />
+                        <Redirect from="*" to="/" />
+                    </Switch>
+                  </GenresContextProvider>    {/* NEW */}
+               </MoviesContextProvider>     {/* NEW */}
+            </div>
         </div>
-      </div>
+    
     </BrowserRouter>
+
 <div className="row mt-3 mb-5">
  <div className="col-md-8 col-sm-6" style={{ color: "#5a606b" }}>
   <h3>ABOUT ME</h3>
@@ -102,6 +100,7 @@ export const Hero =({handleLogout})=>{
     </li>
   </ul>
 </div>
+
 <div className="col-md-4 col-sm-6" style={{ color: "#5a606b" }}>
   <h3>KEEP IN TOUCH</h3>
   <ul className="list-unstyled">
@@ -131,10 +130,11 @@ export const Hero =({handleLogout})=>{
     </li>
   </ul>
 </div>
+
 </div> 
 
-
 </div>
+
 );
 };
 
