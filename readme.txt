@@ -9,5 +9,7 @@ install those when start
 
 2020/12/05 Chenyan Jiang
 
-self-study on youtube video
+self-study on youtube video 
 on changing the UI and Third part library
+
+20020/12/08 Chenyan Jiang
