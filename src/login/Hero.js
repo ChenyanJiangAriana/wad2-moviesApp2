@@ -28,7 +28,7 @@ export const Hero =({handleLogout})=>{
       <nav>
           <section className ="hero">
                  <h2>welcome</h2><h2> <TemporaryDrawer/></h2>
-                 <button onClick="handleLogout">Logout</button>
+                 <button onClick={handleLogout}>Logout</button>
 
             <p><SlideNowPlaying/>
             <NewFilterButton/></p>

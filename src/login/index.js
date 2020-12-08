@@ -88,7 +88,7 @@ export const LoginApp=() =>{
     return(
         <div className = "App">
             {user ? ( 
-              <Hero handleLogout="handleLogout"/>
+              <Hero handleLogout={handleLogout}/>
             ):(
                 <Login
                 email={email} 
