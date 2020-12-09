@@ -6,7 +6,7 @@ import MovieDetails from "../components/movieDetails";
 import PageTemplate from "../components/templateMoviePage";
 import useMovie from "../hooks/useMovie";
 import MovieSimilar from "../components/movieSimilar";
-
+import MovieVideo from "../components/movieVideo";
 
 
 const MoviePage = props => {
@@ -15,7 +15,7 @@ const MoviePage = props => {
   return (
     <>
       {movie ? (
-        <>
+        <><MovieVideo/>
           <PageTemplate movie={movie}>
             <MovieDetails movie={movie} />
           </PageTemplate>

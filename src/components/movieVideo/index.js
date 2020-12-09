@@ -50,15 +50,35 @@ export function MovieVideo({match}) {
       };
 
     return (
-        <div className="container">
-        <div className="row mt-2">
-          <MoviePalyerModal
-            show={isOpen}
-            onHide={() => {
-              setIsOpen(false);
-            }}
-          ></MoviePalyerModal>
-           </div>
-    </div>
+      <div className="container">
+      <div className="row mt-2">
+        <MoviePalyerModal
+          show={isOpen}
+          onHide={() => {
+            setIsOpen(false);
+          }}
+        ></MoviePalyerModal>
+        <div className="col text-center" style={{ width: "100%" }}>
+          <img
+            className="img-fluid"
+            src={`http://image.tmdb.org/t/p/original/${detail.backdrop_path}`}
+            alt={detail.title}
+          ></img>
+          <div className="carousel-center">
+            <i
+              onClick={() => setIsOpen(true)}
+              className="far fa-play-circle"
+              style={{ fontSize: 95, color: "#f4c10f", cursor: "pointer" }}
+            ></i>
+          </div>
+          <div
+            className="carousel-caption"
+            style={{ textAlign: "center", fontSize: 35 }}
+          >
+            {detail.title}
+          </div>
+        </div>
+      </div>
+   </div>
     )
 }export default withRouter(MovieVideo);

@@ -18,7 +18,9 @@ const MovieListPage = () => {
         return <AddToFavoritesButton movie={movie} />;
       }}
     />
+    
   );
+
 };
 
 export default MovieListPage;
