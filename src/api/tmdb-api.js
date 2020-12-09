@@ -1,3 +1,4 @@
+
 import axios from 'axios';
 
 export const getMovies = () => {
@@ -93,6 +94,7 @@ export const getMovies = () => {
         return modifiedData;
       }   
     
+
       export const getRecommendationsMovies = id => {
         return fetch(
           `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${process.env.REACT_APP_TMDB_KEY}`
@@ -108,3 +110,25 @@ export const getMovies = () => {
           .then(res => res.json())
           .then(json => json.results);
       };
+
+// export const fetchMovieVideo = async (id) => {
+//    try{ const {data} = await axios.get(
+//       `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1` )
+//         return data['results'][0];
+//       }   catch (error) { }
+//     }
+    
+// export const fetchMovieVideo = id => {
+//   return fetch(
+//     `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${process.env.REACT_APP_TMDB_KEY}`
+//   )
+//     .then(res => res.json())
+//     .then(json => json.results);
+// };
+
+export const fetchMovieVideo = async (id) => {
+  try {
+      const { data } = await axios.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`);
+      return data['results'][0];
+  } catch (error) { }
+}

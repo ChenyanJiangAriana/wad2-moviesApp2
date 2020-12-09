@@ -9,6 +9,8 @@ export default ({ movie }) => {
     getMovieCast(movie.id).then(cast => {
       setCast(cast);
     });
+    
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <table className="table table-striped table-bordered table-hover">
