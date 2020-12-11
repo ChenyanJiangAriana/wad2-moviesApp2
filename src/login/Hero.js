@@ -15,7 +15,6 @@ import TopRatedMoviesPage from '../pages/topRatedMoviesPage';
 import NowPlayingMoviesPage from '../pages/nowPlayingMoviesPage';
 import SlideNowPlaying from '../components/slideNowPlaying';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import NewFilterButton from '../components/newFilterButton';
 import RecommendationsPage from  '../pages/recommendationsPage';
 
 //import ReactStars from "react-rating-stars-component";
@@ -29,7 +28,7 @@ export const Hero =({handleLogout})=>{
       <div className="row mt-3 mb-5">
           <div className="col-md- col-sm-5" style={{ color: "#603bbb" }}><SiteHeader/></div></div>
                <section >
-                    <p><SlideNowPlaying/><NewFilterButton/></p>
+                    <p><SlideNowPlaying/></p>
                     <button onClick={handleLogout}>Logout</button> 
                </section>  
          

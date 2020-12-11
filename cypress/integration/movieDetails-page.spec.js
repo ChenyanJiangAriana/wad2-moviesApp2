@@ -28,10 +28,6 @@ describe("Movie Details Page", () => {
       })
   });
 
-
-
-
-
   beforeEach(() => {
     cy.visit(`/`);
     cy.get(".card").eq(2).find("img").click();
