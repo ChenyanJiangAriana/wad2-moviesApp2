@@ -36,7 +36,6 @@ export const Hero =({handleLogout})=>{
         <div className="jumbotron">
              {/* New Header  */}
             <div className="container-fluid">
-
             
               <MoviesContextProvider>     {/* NEW  */}
                  <GenresContextProvider>    {/* NEW */}
@@ -48,7 +47,7 @@ export const Hero =({handleLogout})=>{
                         <Route path="/movies/nowPlaying" component={NowPlayingMoviesPage} />
                         <Route path="/movies/topRated" component={TopRatedMoviesPage} />
                         <Route path="/movies/Upcoming" component={UpcomingMoviePage} />
-                 
+                        
                         <Route path="/movies/:id" component={MoviePage} />
                         <Route path="/movies/recommendations/:id" component={RecommendationsPage} />
                         <Route path="/" component={HomePage} />

@@ -1,5 +1,5 @@
 let movies;
-const movieId = 528085; 
+const movieId = 337401; 
 let reviews;
 
 describe("Navigation", () => {
@@ -42,35 +42,50 @@ describe("Navigation", () => {
       cy.url().should("not.include", `/favorites`);
       cy.get("h2").contains("Upcoming Movies");
       cy.get("nav").find("li").eq(2).find("a").click();
-      cy.get("nav.navbar-brand").find("a").click();
       cy.url().should("not.include", `/favorites`);
-      cy.get("h2").contains("No. Movies");
+      cy.get("h2").contains("Top Rated Movies");
+      
     });
   });
 
   describe("From the Movie Details page ", () => {
     beforeEach(() => {
       cy.visit("/");
-      cy.get(".card").eq(0).find("img").click();
+      cy.get(".card").eq(17).find("img").click();
     });
     it("should change browser URL when show/hide reviews is clicked", () => {
+      cy.wait(3000)
       cy.contains("Show Reviews").click();
-      cy.url().should("include", `/movies/${movies[0].id}/reviews`);
+      cy.url().should("include", `/movies/${movieId}/reviews`);
       cy.contains("Hide Reviews").click();
-      cy.url().should("not.include", `/movies/${movies[0].id}/reviews`);
+      cy.url().should("not.include", `/movies/${movieId}/reviews`);
     });
     it("navigate to the full review page when a 'Full Review' link is clicked", () => {
+      cy.wait(3000)
       cy.contains("Show Reviews").click();
-     // cy.url().should("include",`/movies/${movieId}/reviews`);
-      cy.contains("Full Review").click();
-      cy.url().should("include",`/reviews`);
+      cy.url().should("include",`/movies/${movieId}/reviews`);
     });
+
+    it("navigate to the cast page when a 'show Cast' button is clicked", () => {
+      cy.wait(3000)
+      cy.contains("Show Cast").click();
+      cy.url().should("include", `/movies/${movieId}/cast`);
+    });
+
+    it("navigate to the similar movies page when a 'Some Similar Movies' button is clicked", () => {
+      cy.wait(3000)
+      cy.contains("Some Similar Movies").click();
+      cy.url().should("include", `/movies/${movieId}/similar`);
+    });
+
+
   });
 
   describe("From the Favorites page", () => {
     beforeEach(() => {
       cy.visit("/");
       cy.get(".card").eq(0).find("button").click();
+
       cy.get("nav").find("li").eq(3).find("a").click();
     });
     it("should navigate to the movies detail page and change the browser URL", () => {
@@ -83,6 +98,7 @@ describe("Navigation", () => {
   describe("The Go Back button", () => {
     beforeEach(() => {
       cy.visit("/");
+
     });
     it("should navigate from home page to movie details and back", () => {
       cy.get(".card").eq(1).find("img").click();
@@ -91,10 +107,12 @@ describe("Navigation", () => {
       cy.get("h2").contains("No. Movies");
     });
     it("should navigate from favorites page to movie details and back", () => {
-        cy.contains("Add to Favorites").click();
-        cy.contains("Favorites").click();
-        cy.get(".card").eq(0).find("img").click();
-        cy.get("svg[data-icon=arrow-circle-left]").click();
+        cy.wait(3000)
+        cy.get(".card").eq(0).find("button").click();
+        cy.get("Button").eq(0).click();
+        cy.contains("Favorite Movies").click();
+        cy.get(".card").eq(0).find("button").click();
+        cy.contains("Back").click();
         cy.url().should("include", `/favorites`);
         cy.get("h2").contains("Favorite Movies");
     });

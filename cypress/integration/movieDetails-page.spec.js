@@ -1,6 +1,7 @@
 let movieId = null
 let movie;
 let reviews;
+
 describe("Movie Details Page", () => {
   before(() => {
     cy.request(
@@ -14,8 +15,7 @@ describe("Movie Details Page", () => {
       })
       .then((arbitraryMovieIdignored) => {
         movieId = arbitraryMovieIdignored
-        return cy
-          .request(
+        return cy.request(
             `https://api.themoviedb.org/3/movie/${movieId}?api_key=${Cypress.env(
               "TMDB_KEY"
             )}`

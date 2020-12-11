@@ -20,12 +20,17 @@ const filterByGenre = (movieList, genreId) =>
           movies = response.results
         })
     })
+
     beforeEach(() => {
-      cy.visit("/")
+      cy.visit('http://localhost:8080')          //vist the url
     });
   
     describe("Base test", () => { 
       it("displays page header", () => {
+        
+        cy.get('input[type="text"]').type('jcy@outlook.com')   //type the user name in the field
+        cy.get('input[type="password"]').type('123456') //type the password in the field
+        cy.get('button').click()  //click the button
         cy.get("h2").contains("Movies");
         cy.get(".badge").contains(20);
       });
@@ -34,6 +39,7 @@ const filterByGenre = (movieList, genreId) =>
     describe("Filtering", () => {
       describe("By movie title" ,() => {
         it("should display movies with 'p ' in the title", () => {
+          cy.wait(3000)
           const searchString = 'p'
           const matchingMovies = filterByTitle(movies, searchString );
           cy.get("input").clear().type(searchString) ;
@@ -47,6 +53,7 @@ const filterByGenre = (movieList, genreId) =>
         it("should display movies with 'o' in the title", () => {
           const searchString = "o";
           const matchingMovies = filterByTitle(movies, searchString);
+          cy.wait(3000)
           cy.get("input").clear().type(searchString);
           cy.get(".card").should("have.length", matchingMovies.length);
           cy.get(".card").each(($card, index) => {
@@ -56,6 +63,7 @@ const filterByGenre = (movieList, genreId) =>
           })
         })
         it("the exceptional case when their are no matches", () => {
+          cy.wait(3000)
           const searchString = "xyz";
           const matchingMovies = filterByTitle(movies, searchString);
           cy.get("input").clear().type(searchString);
@@ -85,6 +93,7 @@ const filterByGenre = (movieList, genreId) =>
           const searchString = 'p'
           const matchingMovies1 = filterByTitle(movies, searchString );
           const matchingMovies2 = filterByGenre(matchingMovies1, selectedGenreId);
+          cy.wait(3000)
           cy.get("input").clear().type(searchString) ;
           cy.get("select").select(selectedGenreText); 
           cy.get(".card").should("have.length", matchingMovies2.length);
