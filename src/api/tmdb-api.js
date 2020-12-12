@@ -57,13 +57,15 @@ export const getMovies = () => {
       .then(json => json.results);
   };
 
-  // export const getPerson = () => {
-  //   return fetch(
-  //     `https://api.themoviedb.org/3/trending/person/week?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1` 
-  //   )
-  //     .then(res => res.json())
-  //     .then(json => json.results);
-  // };
+  export const getPopularPerson = () => {
+    return fetch(
+      `https://api.themoviedb.org/3/person/popular?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&page=1`
+    )
+      .then(res => res.json())
+      .then(json => json.results);
+  };
+  
+  
 
   export const getPerson = id => {
     return fetch(

@@ -73,7 +73,7 @@ export function TemporaryDrawer() {
       <List>
          <ListItem>
            <ListItemIcon><InboxIcon/></ListItemIcon>
-           <Link to="/">Trending People</Link>
+           <Link to="/people/popular/">Popular People</Link>
            <ListItemText />
          </ListItem>
       </List>

@@ -25,11 +25,8 @@ const filterByGenre = (movieList, genreId) =>
       cy.visit('http://localhost:8080') 
     });
 
-    
-  
     describe("Base test", () => { 
       it("displays page header", () => {
-        cy.wait(3000)
         cy.get('input[type="text"]').type('jcy@outlook.com')   //type the user name in the field
         cy.get('input[type="password"]').type('123456') //type the password in the field
         cy.get('button').eq(0).click()  //click the button         //vist the url

@@ -16,7 +16,9 @@ import NowPlayingMoviesPage from '../pages/nowPlayingMoviesPage';
 import SlideNowPlaying from '../components/slideNowPlaying';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import RecommendationsPage from  '../pages/recommendationsPage';
-import PersonPage from '../pages/personPage';
+import PersonPage from '../pages/personDetailsPage';
+import PopularPeoplePage from '../pages/popularPeoplePage';
+import PeopleContextProvider from "../contexts/peopleContext";
 
 //import ReactStars from "react-rating-stars-component";
 //import withRouter from 'react-router-dom';
@@ -40,7 +42,10 @@ export const Hero =({handleLogout})=>{
             
               <MoviesContextProvider>     {/* NEW  */}
                  <GenresContextProvider>    {/* NEW */}
+                   <PeopleContextProvider>  {/* NEW */}
                     <Switch>
+                        <Route path="/people/popular" component={PopularPeoplePage} />
+                        <Route path="/people/:id" component={PersonPage} />
                         <Route exact path="/movies/watchlist" component={WatchListMoviesPage} />
                         <Route exact path="/reviews/form" component={AddMovieReviewPage} />
                         <Route path="/reviews/:id" component={MovieReviewPage} />
@@ -54,6 +59,7 @@ export const Hero =({handleLogout})=>{
                         <Route path="/" component={HomePage} />
                         <Redirect from="*" to="/" />
                     </Switch>
+                    </PeopleContextProvider>  {/* NEW */}
                   </GenresContextProvider>    {/* NEW */}
                </MoviesContextProvider>     {/* NEW */}
             </div>
