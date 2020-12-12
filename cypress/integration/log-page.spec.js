@@ -1,6 +1,6 @@
 describe("Log Page ", () => {
   beforeEach(() => {
-    cy.visit('http://localhost:8080')          //vist the url
+    cy.visit('/')          //vist the url
   });
 
   it("should Sign Up", () => {

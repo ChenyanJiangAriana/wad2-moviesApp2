@@ -22,7 +22,7 @@ const filterByGenre = (movieList, genreId) =>
     })
 
     beforeEach(() => {
-      cy.visit('http://localhost:8080') 
+      cy.visit('/') 
     });
 
     describe("Base test", () => { 
