@@ -133,7 +133,7 @@ describe("Navigation", () => {
         cy.wait(3000)
         cy.get(".card").eq(0).find("button").click();
         cy.get("Button").eq(0).click();
-        cy.contains("Favorite Movies").click();
+        cy.contains("Favorite Movies").click({force:true});
         cy.get(".card").eq(0).find("button").click();
         cy.contains("Back").click();
         cy.url().should("include", `/favorites`);

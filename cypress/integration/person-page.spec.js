@@ -27,8 +27,6 @@ describe("Popular person" , () => {
 
     describe("Base test", () => {
         it("displays page header", () => {
-            cy.wait(3000)
-            cy.get("h2").contains("Popular People");
             cy.get(".badge").contains(20);
         });
     })
