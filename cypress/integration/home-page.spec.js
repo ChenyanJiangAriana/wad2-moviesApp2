@@ -22,15 +22,17 @@ const filterByGenre = (movieList, genreId) =>
     })
 
     beforeEach(() => {
-      cy.visit('http://localhost:8080')          //vist the url
+      cy.visit('http://localhost:8080') 
     });
+
+    
   
     describe("Base test", () => { 
       it("displays page header", () => {
-        
+        cy.wait(3000)
         cy.get('input[type="text"]').type('jcy@outlook.com')   //type the user name in the field
         cy.get('input[type="password"]').type('123456') //type the password in the field
-        cy.get('button').click()  //click the button
+        cy.get('button').eq(0).click()  //click the button         //vist the url
         cy.get("h2").contains("Movies");
         cy.get(".badge").contains(20);
       });
@@ -53,7 +55,7 @@ const filterByGenre = (movieList, genreId) =>
         it("should display movies with 'o' in the title", () => {
           const searchString = "o";
           const matchingMovies = filterByTitle(movies, searchString);
-          cy.wait(3000)
+          cy.wait(2000)
           cy.get("input").clear().type(searchString);
           cy.get(".card").should("have.length", matchingMovies.length);
           cy.get(".card").each(($card, index) => {
@@ -63,7 +65,7 @@ const filterByGenre = (movieList, genreId) =>
           })
         })
         it("the exceptional case when their are no matches", () => {
-          cy.wait(3000)
+          cy.wait(1000)
           const searchString = "xyz";
           const matchingMovies = filterByTitle(movies, searchString);
           cy.get("input").clear().type(searchString);
@@ -93,7 +95,7 @@ const filterByGenre = (movieList, genreId) =>
           const searchString = 'p'
           const matchingMovies1 = filterByTitle(movies, searchString );
           const matchingMovies2 = filterByGenre(matchingMovies1, selectedGenreId);
-          cy.wait(3000)
+          cy.wait(1000)
           cy.get("input").clear().type(searchString) ;
           cy.get("select").select(selectedGenreText); 
           cy.get(".card").should("have.length", matchingMovies2.length);
@@ -107,4 +109,5 @@ const filterByGenre = (movieList, genreId) =>
 
 
    });
+
 });

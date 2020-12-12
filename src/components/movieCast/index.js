@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getMovieCast } from "../../api/tmdb-api";
-import "./cast.css"
+import "./cast.css";
 
 export default ({ movie }) => {
   const [cast, setCast] = useState([]);

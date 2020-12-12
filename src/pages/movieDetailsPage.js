@@ -92,7 +92,7 @@ const MoviePage = props => {
             path={`/movies/:id/cast`}
             render={props => <MovieCast movie={movie} {...props} />}
           />
-
+          
         </>
         
       ) : (

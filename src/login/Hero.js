@@ -16,6 +16,7 @@ import NowPlayingMoviesPage from '../pages/nowPlayingMoviesPage';
 import SlideNowPlaying from '../components/slideNowPlaying';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import RecommendationsPage from  '../pages/recommendationsPage';
+import PersonPage from '../pages/personPage';
 
 //import ReactStars from "react-rating-stars-component";
 //import withRouter from 'react-router-dom';
@@ -47,7 +48,7 @@ export const Hero =({handleLogout})=>{
                         <Route path="/movies/nowPlaying" component={NowPlayingMoviesPage} />
                         <Route path="/movies/topRated" component={TopRatedMoviesPage} />
                         <Route path="/movies/Upcoming" component={UpcomingMoviePage} />
-                        
+                        <Route path="/person/:id" component={PersonPage} />
                         <Route path="/movies/:id" component={MoviePage} />
                         <Route path="/movies/recommendations/:id" component={RecommendationsPage} />
                         <Route path="/" component={HomePage} />

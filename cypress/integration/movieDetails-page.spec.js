@@ -61,6 +61,6 @@ describe("Movie Details Page", () => {
 
    it("should display poster as an image with src attribute", () => {
     cy.get("img")
-        .should("have.attr", "src");
+        .should("have.attr", "src")
      });
   });
