@@ -36,7 +36,8 @@ bundle_app:
 e2etest:    
     stage: test
     only: 
-      - developer
+      - staging
+      - master
 
     before_script:
       - npm install -g http-server
