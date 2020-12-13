@@ -1,5 +1,5 @@
 let movies;
-const movieId = 454433; 
+const movieId = 602211; 
 let reviews;
 
 describe("Navigation", () => {
@@ -56,50 +56,50 @@ describe("Navigation", () => {
     });
     it("should change browser URL when show/hide reviews is clicked", () => {
       cy.wait(3000)
-      cy.visit(`/movies/${movieId}`);
+      cy.get(".card").eq(5).find("img").click();
       cy.contains("Show Reviews").click();
-      cy.url().should("include", `/movies/${movieId}/reviews`);
+      cy.url().should("include", `/movies/${movies[5].id}/reviews`);
       cy.wait(3000)
       cy.contains("Hide Reviews").click();
-      cy.url().should("not.include", `/movies/${movieId}/reviews`);
+      cy.url().should("not.include", `/movies/${movies[5].id}/reviews`);
     });
     it("should change browser URL when show/hide Cast is clicked", () => {
       
-      cy.visit(`/movies/${movieId}`);
+      cy.get(".card").eq(0).find("img").click();
       cy.contains("Show Cast").click();
-      cy.url().should("include", `/movies/${movieId}/cast`);
+      cy.url().should("include", `/movies/${movies[0].id}/cast`);
       cy.contains("Hide Cast").click();
-      cy.url().should("not.include", `/movies/${movieId}/cast`);
+      cy.url().should("not.include", `/movies/${movies[0].id}/cast`);
     });
 
     it("should change browser URL when show/hide similar movies is clicked", () => {
-    cy.visit(`/movies/${movieId}`);
+      cy.get(".card").eq(2).find("img").click();
       cy.contains("Some Similar Movie").click();
-      cy.url().should("include", `/movies/${movieId}/similar`);
+      cy.url().should("include", `/movies/${movies[2].id}/similar`);
       cy.contains("Hide").click();
-      cy.url().should("not.include", `/movies/${movieId}/similar`);
+      cy.url().should("not.include", `/movies/${movies[2].id}/similar`);
     });
   
 
     it("navigate to the full review page when a 'Full Review' link is clicked", () => {
       cy.wait(3000)
-      cy.visit(`/movies/${movieId}`);
+      cy.get(".card").eq(2).find("img").click();
       cy.contains("Show Reviews").click();
-      cy.url().should("include",`/movies/${movieId}/reviews`);
+      cy.url().should("include",`/movies/${movies[2].id}/reviews`);
     });
 
     it("navigate to the cast page when a 'show Cast' button is clicked", () => {
       cy.wait(1000)
-      cy.visit(`/movies/${movieId}`);
+      cy.get(".card").eq(0).find("img").click();
       cy.contains("Show Cast").click();
-      cy.url().should("include", `/movies/${movieId}/cast`);
+      cy.url().should("include", `/movies/${movies[0].id}/cast`);
     });
 
     it("navigate to the similar movies page when a 'Some Similar Movies' button is clicked", () => {
       cy.wait(3000)
-      cy.visit(`/movies/${movieId}`);
+      cy.get(".card").eq(2).find("img").click();
       cy.contains("Some Similar Movies").click();
-      cy.url().should("include", `/movies/${movieId}/similar`);
+      cy.url().should("include", `/movies/${movies[2].id}/similar`);
     });
 
 
