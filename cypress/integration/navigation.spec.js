@@ -56,12 +56,12 @@ describe("Navigation", () => {
     });
     it("should change browser URL when show/hide reviews is clicked", () => {
       cy.wait(3000)
-      cy.get(".card").eq(5).find("img").click();
+      cy.get(".card").eq(4).find("img").click();
       cy.contains("Show Reviews").click();
-      cy.url().should("include", `/movies/${movies[5].id}/reviews`);
+      cy.url().should("include", `/movies/${movies[4].id}/reviews`);
       cy.wait(3000)
       cy.contains("Hide Reviews").click();
-      cy.url().should("not.include", `/movies/${movies[5].id}/reviews`);
+      cy.url().should("not.include", `/movies/${movies[4].id}/reviews`);
     });
     it("should change browser URL when show/hide Cast is clicked", () => {
       
