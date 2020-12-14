@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from "react";
 import RBCarousel from "react-bootstrap-carousel";
 import { fetchNowPlayingMovies } from "../../api/tmdb-api";
-import {withRouter} from "react-router-dom";
+//import {withRouter} from "react-router-dom";
 import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";//add the arrow in each side of the slide
 export function SlideNowPlaying() {
     const [nowPlaying, setNowPlaying] = useState([]);
@@ -49,4 +49,4 @@ export function SlideNowPlaying() {
             </div>
         </div>
     )
-}export default withRouter(SlideNowPlaying);
+}export default SlideNowPlaying;

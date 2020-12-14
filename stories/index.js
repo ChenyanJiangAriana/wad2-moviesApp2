@@ -17,6 +17,7 @@ import BlankButton from '../src/components/buttons/blankPerson.js'
 import { MemoryRouter } from "react-router";
 import GenresContextProvider from "../src/contexts/genresContext";
 import { action } from "@storybook/addon-actions";
+import SlideNowPlaying from "../src/components/slideNowPlaying";
 
 const sample = {
   adult: false,
@@ -135,6 +136,10 @@ storiesOf("Home Page/Header", module).add("default", () => (
   <MoviesHeader title="All Movies" numMovies={10} />
 ));
 
+storiesOf("Home Page/SlideNowPlaying", module).add("default", () => (
+  <SlideNowPlaying  movie={sample} />
+));
+
 storiesOf("Home Page/MovieList", module)
   .addDecorator(story => (
     <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
@@ -185,11 +190,6 @@ storiesOf("Movie Details Page/MovieCast", module)
 .add("default", () => (
   <MovieCast movie={sample} />
 ));
-
-
-
-
-
 
 
 
