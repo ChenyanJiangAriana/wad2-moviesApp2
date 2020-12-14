@@ -1,68 +1,20 @@
-let people;    // List of movies from TMDB
+let video;    
 
-// Utility functions
-const filterByTitle = (personList, string) =>
-    personList.filter((m) => m.name.toLowerCase().search(string) !== -1);
-
-describe("Popular person" , () => {
-    before(() => {
-        // Get movies from TMDB and store in movies variable.
-        cy.request(
-            `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${Cypress.env(
-                "TMDB_KEY"
-            )}&language=en-US&include_adult=false&include_video=false&page=1`
-        )
-            .its("body")    // Take the body of HTTP response from TMDB
-            .then((response) => {
-                people = response.results
-            })
-    })
+describe("Video Movie" , () => {
     beforeEach(() => {
-        cy.visit("/")
+        cy.visit(`/`);
         cy.wait(3000)
-        cy.get("Button").eq(0).click();
-        cy.contains("Popular People").click()
-        cy.url().should("include", `people/popular/`);
-    });
+        cy.get(".card").eq(2).find("img").click();
+      });
+    
 
-    describe("Base test", () => {
-        it("displays page header", () => {
-            cy.get(".badge").contains(20);
+    describe("Video test", () => {
+        it("Show movies video when click the player icon", () => {
+            cy.wait(3000)
+            cy.get('div').get("i.far.fa-play-circle").eq(5).click()
+            cy.wait(3000)
+            cy.get("button.close");
         });
-    })
-    describe("Filtering", () => {
-        describe("By person name", () => {
-            it("should display people with 'p ' in the name", () => {
-                const searchString = 'p'
-                const matchingPeople = filterByTitle(people, searchString);
-                cy.get("input").clear().type(searchString);
-                cy.get(".cards").should("have.length", matchingPeople.length);
-                cy.get(".cards").each(($cards, index) => {
-                    cy.wrap($cards)
-                        .find(".cards-name")
-                        .should("have.text", matchingPeople[index].name);
-                });
-            })
-            it("should display people with 'o' in the name", () => {
-                const searchString = "o";
-                const matchingPeople = filterByTitle(people, searchString);
-                cy.get("input").clear().type(searchString);
-                cy.get(".cards").should("have.length", matchingPeople.length);
-                cy.get(".cards").each(($cards, index) => {
-                    cy.wrap($cards)
-                        .find(".cards-name")
-                        .should("have.text", matchingPeople[index].name);
-                });
-            })
-            it("should display movies with 'xyz' in the title", () => {
-                const searchString = "xyz";
-                const matchingPeople = filterByTitle(people, searchString);
-                cy.get("input").clear().type(searchString);
-                cy.get(".card").should("have.length", matchingPeople.length);
-
-            })
-        })
-
-    })
-
+      })
+         
 })

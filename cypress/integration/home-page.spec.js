@@ -86,21 +86,29 @@ const filterByGenre = (movieList, genreId) =>
       });
 
       describe("By movie text and genre", () => {
-        it("should display movies with the specified text and genre only", () => {
+        it("should display movies with the specified movie title and genre ", () => {
+          const searchString = "m";
+          const matchingMovies = filterByTitle(movies, searchString);
+          cy.wait(3000)
+          cy.get("input").clear().type(searchString);
+          cy.wait(3000)
+          cy.get(".card").should("have.length", matchingMovies.length);
+          cy.get(".card").each(($card, index) => {
+            cy.wrap($card)
+            .find(".card-title")
+            .should("have.text", matchingMovies[index].title);
+          })
           const selectedGenreId = 35;
           const selectedGenreText = "Comedy";
-          const searchString = 'p'
-          const matchingMovies1 = filterByTitle(movies, searchString );
-          const matchingMovies2 = filterByGenre(matchingMovies1, selectedGenreId);
-          cy.wait(1000)
-          cy.get("input").clear().type(searchString) ;
+          const matchingMovies0 = filterByGenre(matchingMovies, selectedGenreId);
           cy.get("select").select(selectedGenreText); 
-          cy.get(".card").should("have.length", matchingMovies2.length);
+          cy.get(".card").should("have.length", matchingMovies0.length);
           cy.get(".card").each(($card, index) => {
             cy.wrap($card)
               .find(".card-title")
-              .should("have.text", matchingMovies2[index].title);
+              .should("have.text", matchingMovies0[index].title);
           });      
+
         });
       });
 
