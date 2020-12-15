@@ -6,9 +6,10 @@ Name: Chenyan Jiang
 
 ...... A bullet-point list of the ADDITIONAL user features you have implemented for the  Movies Fan app ......,
  
- + Feature 1 - .... a statement of its purpose/objective ..... 
- + Feature 2 - .......
- + Feature 3 = ......
+ + Feature 1 - trending people : user can see the cast which is now very popular 
+  a statement of its purpose/objective ..... 
+ + Feature 2 - new React UI libraries: Material UI - build a new temporary drawer - entrance for (Watch List, Favorite Movies, Home Page, Trending People) combine this new element into the old site components
+ + Feature 3 - new Detail Page, contain the similar movie recommentation 
  + etc
  + etc
 
@@ -72,8 +73,6 @@ Name: Chenyan Jiang
 ![][signUp]
 > Change the login page to sign up page by click the "sign up"
 
-![][]
-
 ![][cardLink]
 > Clicking a card causes the display of that movie's details.
 
@@ -105,9 +104,6 @@ Name: Chenyan Jiang
                       https://material-ui.com/components/buttons/
 
 
-                     
-     
-     
   
 . . . . . Briefly mention each technologies/techniques used in your project codebase that were not covered in the lectures/labs. Provide source code filename references to support your assertions and include reference material links (articles/blogs).
 
@@ -121,3 +117,5 @@ Name: Chenyan Jiang
 [reviewLink]: ./public/reviewLink.png
 [cardLink]: ./public/cardLink.png
 [stories]: ./public/storybook.png
+---------------------------------
+https://dashboard.cypress.io/organizations/d39f3020-0fa9-4d9b-9208-1662c0d53dd5/projects
