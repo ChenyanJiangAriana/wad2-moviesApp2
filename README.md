@@ -24,6 +24,13 @@ Name: Chenyan Jiang
 + https://api.themoviedb.org/3/genre/movie/list - get a list of movie genres
 + https://api.themoviedb.org/3/movie/top_rated - get top rated movies information
 + https://api.themoviedb.org/3/movie/now_playing - get now playing movies information
++ https://api.themoviedb.org/3/movie/top_rated - get topRated playing movies information
++ https://api.themoviedb.org/3/person/popular - get popular people's list 
++ https://api.themoviedb.org/3/person/${id} - get the detail information of specific person 
++ https://api.themoviedb.org/3/movie/${id}/similar - get similar movies information in movie detail page
++ https://api.themoviedb.org/3/movie/${id}/videos - get video for traller video for detail movie page
++ https://api.themoviedb.org/3/movie/${id}/credits -get movies cast and credits
+
 
 ## App Design.
 
@@ -51,11 +58,21 @@ Name: Chenyan Jiang
 + /reviews/:id (public) - displays the full text of a movie review.
 + /movies/nowPlaying (public) - displays the now Playing movies
 + /movies/topRated (public) - displays the top rated movies
-+ 
++ /people/pupular(public) - displays the popular movies list
++ /people/movies/watchlish(protected) - display the movies that you want to look into the watchlist
++ /people/:id (public)- show the person's details information by id
++ /movies/:id (public)- show detailed information about movie by id 
 
 ### Data hyperlinking.
 
 .... Use screenshots to illustrate where data hyperlinking is present in your views - include captions.
+![][login]
+> Show an login page as the first when visit the root page
+
+![][signUp]
+> Change the login page to sign up page by click the "sign up"
+
+![][]
 
 ![][cardLink]
 > Clicking a card causes the display of that movie's details.
@@ -97,6 +114,8 @@ Name: Chenyan Jiang
 ---------------------------------
 
 [model]: ./data.jpg
+[login]: .public/login.png
+[signUp]: public/signUp.png
 [movieDetail]: ./public/movieDetail.png
 [review]: ./public/review.png
 [reviewLink]: ./public/reviewLink.png
