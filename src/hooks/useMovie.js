@@ -7,6 +7,7 @@ const useMovie = id => {
     getMovie(id).then(movie => {
       setMovie(movie);
     });
+    
   }, [id]);
   return [movie, setMovie];
 };

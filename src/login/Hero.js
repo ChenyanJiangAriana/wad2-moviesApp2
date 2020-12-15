@@ -1,4 +1,4 @@
-import React from "react";
+import React,{lazy,Suspense} from "react";
 //import "src/node_modules/bootstrap/dist/css/bootstrap.css";
 import HomePage from "../pages/homePage";
 import MoviePage from '../pages/movieDetailsPage';
@@ -11,14 +11,16 @@ import MoviesContextProvider from "../contexts/moviesContext";
 import GenresContextProvider from "../contexts/genresContext";
 import AddMovieReviewPage from '../pages/addMovieReviewPage';
 import WatchListMoviesPage from '../pages/watchListMoviesPage';
-import TopRatedMoviesPage from '../pages/topRatedMoviesPage';
+
 import NowPlayingMoviesPage from '../pages/nowPlayingMoviesPage';
-import SlideNowPlaying from '../components/slideNowPlaying';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import RecommendationsPage from  '../pages/recommendationsPage';
 import PersonPage from '../pages/personDetailsPage';
-import PopularPeoplePage from '../pages/popularPeoplePage';
+//import PopularPeoplePage from '../pages/popularPeoplePage';
 import PeopleContextProvider from "../contexts/peopleContext";
+const PopularPeoplePage= lazy(() => import('../pages/popularPeoplePage'));
+const SlideNowPlaying= lazy(() => import("../components/slideNowPlaying"));
+const TopRatedMoviesPage=lazy(() =>import('../pages/topRatedMoviesPage'));
 
 //import ReactStars from "react-rating-stars-component";
 //import withRouter from 'react-router-dom';
@@ -31,7 +33,9 @@ export const Hero =({handleLogout})=>{
       <div className="row mt-3 mb-5">
           <div className="col-md- col-sm-5" style={{ color: "#603bbb" }}><SiteHeader/></div></div>
                <section >
+               <Suspense fallback={<div>Loading...</div>}>
                     <p><SlideNowPlaying/></p>
+                </Suspense>
                     <button onClick={handleLogout}>Logout</button> 
                </section>  
          
@@ -43,6 +47,7 @@ export const Hero =({handleLogout})=>{
               <MoviesContextProvider>     {/* NEW  */}
                  <GenresContextProvider>    {/* NEW */}
                    <PeopleContextProvider>  {/* NEW */}
+                   <Suspense fallback={<div>Loading...</div>}>
                     <Switch>
                         <Route path="/people/popular" component={PopularPeoplePage} />
                         <Route path="/people/:id" component={PersonPage} />
@@ -59,6 +64,7 @@ export const Hero =({handleLogout})=>{
                         <Route path="/" component={HomePage} />
                         <Redirect from="*" to="/" />
                     </Switch>
+                    </Suspense>
                     </PeopleContextProvider>  {/* NEW */}
                   </GenresContextProvider>    {/* NEW */}
                </MoviesContextProvider>     {/* NEW */}
