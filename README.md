@@ -56,7 +56,7 @@ npm install
 ![][review]
 >Shows the full text for a movie review. 
 
-![][movieDetailPage-traller]
+![][movieDetailPageTraller]
 >In movieDetailPage add an related traller, user can watch traller video, to know more about this movie.
 
 ## Routing.
@@ -101,7 +101,7 @@ npm install
 ![][reviewLink]
 >Clicking the 'Full Review' for a review extract will display the full text of the review
 
-![][movieDetail-ShowCastOfThisMovie]
+![][movieDetailShowCastOfThisMovie]
 > Click the button "show cast", to show the hidden details of the cast in this movies
 
 ![][movieDetailCast]
@@ -110,13 +110,13 @@ npm install
 ![][movieDetailCastDetails]
 > Now the movie detail cast page is shown.
 
-![][mainPage-withDrawAndSlide]
+![][mainPagewithDrawAndSlide]
 >Clicking the 'Full Review' for a review extract will display the full text of the review
 
-![][movieDetailPage-traller2]
+![][movieDetailPageTraller2]
 > Click the "playing" icon to play video about this movie's traller
 
-![][movieDetailPage-traller3]
+![][movieDetailPageTraller3]
 > Click the Close button in the up right area to close the traller or find other youtube video.
 ## Independent learning (If relevant).
 
@@ -148,27 +148,23 @@ npm install
 
 ---------------------------------
 [model]: ./data.jpg
-[mainPage-withDrawAndSlide]:./public/ainPage-withDrawAndSlide.png
-[cardCastLink]: .public/draw-menu.png
-[cardLink]: .public/cardlink.png
-
-[mainPage-withDrawAndSlide]: .public/mainPage-withDrawAndSlide.png
+[mainPagewithDrawAndSlide]:./public/ainPagewithDrawAndSlide.png
+[cardCastLink]: .public/drawmenu.png
 [draw]: .public/draw.png
 [firebase]: .public/firebase.png
-[draw-menu]: .public/draw-menu.png
-[movieDetail-showCastofThisMovie]: .public/movieDetail-showCastOfThisMovie.png
+[drawmenu]: .public/drawmenu.png
+[movieDetailshowCastofThisMovie]: .public/movieDetailshowCastOfThisMovie.png
 [movieDetailCastDetails]: .public/movieDetailCastDetails.png
 [personPage]: .public/personPage.png
-[movieDetailPage-traller]: .public/movieDetailPage-traller.png
-[movieDetailPage-traller2]: .public/movieDetailPage-traller2.png
-[movieDetailPage-traller3]: .public/movieDetailPage-traller3.png
+[movieDetailPageTraller]: .public/movieDetailPagetraller.png
+[movieDetailPageTraller2]: .public/movieDetailPagetraller2.png
+[movieDetailPageTraller3]: .public/movieDetailPagetraller3.png
 [login]: .public/login.png
 [signUp]: .public/signUp.png
 [movieDetail]: ./public/movieDetail.png
 [review]: ./public/review.png
 [reviewLink]: ./public/reviewlink.png
-[cardLink]: ./public/cardlink.png
-[movieDetail-SimilarMovie]: ./public/movieDetail-SimilarMovie.png
+[movieDetailSimilarMovie]: ./public/movieDetailSimilarMovie.png
 [cardLink]: ./public/cardlink.png
 [stories]: ./public/storybook.png
 ---------------------------------
