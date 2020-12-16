@@ -5,7 +5,7 @@ Name: Chenyan Jiang
 ## Features.
 
 ...... A bullet-point list of the ADDITIONAL user features you have implemented for the  Movies Fan app ......,
- 
+
  + Feature 1 - trending people : user can see the cast which is now very popular 
  + Feature 2 - new React UI libraries: Material UI - build a new temporary drawer - entrance for (Watch List, Favorite Movies, Home Page, Trending People) combine this new element into the old site components
  + Feature 3 - new Detail Page, contain the similar movie recommentation, new function - see the related cast
@@ -143,24 +143,24 @@ npm install
                       https://material-ui.com/components/buttons/
 
 
-  
+
 . . . . . Briefly mention each technologies/techniques used in your project codebase that were not covered in the lectures/labs. Provide source code filename references to support your assertions and include reference material links (articles/blogs).
 
 ---------------------------------
 [model]: ./data.jpg
 [mainPagewithDrawAndSlide]:./public/ainPagewithDrawAndSlide.png
-[cardCastLink]: .public/drawmenu.png
-[draw]: .public/draw.png
-[firebase]: .public/firebase.png
-[drawmenu]: .public/drawmenu.png
-[movieDetailshowCastofThisMovie]: .public/movieDetailshowCastOfThisMovie.png
-[movieDetailCastDetails]: .public/movieDetailCastDetails.png
-[personPage]: .public/personPage.png
-[movieDetailPageTraller]: .public/movieDetailPagetraller.png
-[movieDetailPageTraller2]: .public/movieDetailPagetraller2.png
-[movieDetailPageTraller3]: .public/movieDetailPagetraller3.png
-[login]: .public/login.png
-[signUp]: .public/signUp.png
+[cardCastLink]: ./public/drawmenu.png
+[draw]: ./public/draw.png
+[firebase]: ./public/firebase.png
+[drawmenu]: ./public/drawmenu.png
+[movieDetailshowCastofThisMovie]: ./public/movieDetailshowCastOfThisMovie.png
+[movieDetailCastDetails]: ./public/movieDetailCastDetails.png
+[personPage]: ./public/personPage.png
+[movieDetailPageTraller]: ./public/movieDetailPagetraller.png
+[movieDetailPageTraller2]: ./public/movieDetailPagetraller2.png
+[movieDetailPageTraller3]: ./public/movieDetailPagetraller3.png
+[login]: ./public/login.png
+[signUp]: ./public/sign.png
 [movieDetail]: ./public/movieDetail.png
 [review]: ./public/review.png
 [reviewLink]: ./public/reviewlink.png
