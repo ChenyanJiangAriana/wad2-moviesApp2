@@ -115,7 +115,6 @@ describe("Navigation", () => {
       cy.get(".card").eq(0).find("img").click();
       cy.wait(3000)
       cy.url().should("include", `/movies/${movies[0].id}`);
-      cy.get("h2").contains(movies[0].title);
     });
   });
 
