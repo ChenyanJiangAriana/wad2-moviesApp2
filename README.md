@@ -7,15 +7,18 @@ Name: Chenyan Jiang
 ...... A bullet-point list of the ADDITIONAL user features you have implemented for the  Movies Fan app ......,
  
  + Feature 1 - trending people : user can see the cast which is now very popular 
-  a statement of its purpose/objective ..... 
  + Feature 2 - new React UI libraries: Material UI - build a new temporary drawer - entrance for (Watch List, Favorite Movies, Home Page, Trending People) combine this new element into the old site components
- + Feature 3 - new Detail Page, contain the similar movie recommentation 
- + etc
- + etc
+ + Feature 3 - new Detail Page, contain the similar movie recommentation, new function - see the related cast
+ + Feature 4 - user can see the traller in the movie detail page 
+ + Feature 5 - slide in now playing movies showed all page as a recommadation for attract people to learn more about now playing movies
+ + Feature 6 - can see similar movies in movie detail page and related cast information
+ + Feature 7 - use the login function and firebase to make some authentifiaton, also log out function.
 
 ## Setup requirements (If required).
 
 ...... A brief explanation of any non-standard setup steps necessary to run your app/client locally (after cloning the repo) ........
+
+npm install
 
 ## API Data Model.
 
@@ -44,12 +47,17 @@ Name: Chenyan Jiang
 ### UI Design.
 
 ...... Insert screenshots of the new/modified views you have added to the Movies Fan app. Include a caption for each one clearly stating its purpose and any user interaction it supports ........
+![][mainPage-with draw and slide]
+>
 
 ![][movieDetail]
 >Shows detailed information on a movie. Clicking the 'Show Reviews' button will display extracts from critic reviews.
 
 ![][review]
 >Shows the full text for a movie review. 
+
+![][movieDetailPage-traller]
+>In movieDetailPage add an related traller, user can watch traller video, to know more about this movie.
 
 ## Routing.
 
@@ -67,18 +75,49 @@ Name: Chenyan Jiang
 ### Data hyperlinking.
 
 .... Use screenshots to illustrate where data hyperlinking is present in your views - include captions.
+
 ![][login]
 > Show an login page as the first when visit the root page
 
 ![][signUp]
 > Change the login page to sign up page by click the "sign up"
 
+![][firebase]
+> After the sign up finished the information is saved in authentication on firebase area
+
+![][mainPage-withDrawAndSlide]
+> the first page to show when login successful.
+> The menu which hidden by the draw can be seen by click the "menu" button
+> The slide of nowplaying movies is showing at the top of the page which attract people to learn more about the now playing movies (sounds like an advertisement)
+> User can click the arrow icon on both side of the slide to see differnt now playing movies
+> If they want to see more about the now playing movies they can also to the now playing movies list by click "now playing" link in the navigation
+
 ![][cardLink]
 > Clicking a card causes the display of that movie's details.
+
+![][cardCastLink]
+> Clicking a card causes the display of that movie's details
 
 ![][reviewLink]
 >Clicking the 'Full Review' for a review extract will display the full text of the review
 
+![][movieDetail-ShowCastOfThisMovie]
+> Click the button "show cast", to show the hidden details of the cast in this movies
+
+![][movieDetailCast]
+> After click the show cast this page is shown. We can see more information about this cast by click the link in the right side of the table - "Actor Profile". 
+
+![][movieDetailCastDetails]
+> Now the movie detail cast page is shown.
+
+![][mainPage-withDrawAndSlide]
+>Clicking the 'Full Review' for a review extract will display the full text of the review
+
+![][movieDetailPage-traller2]
+> Click the "playing" icon to play video about this movie's traller
+
+![][movieDetailPage-traller3]
+> Click the Close button in the up right area to close the traller or find other youtube video.
 ## Independent learning (If relevant).
 
 1. firebase auth 
@@ -108,14 +147,30 @@ Name: Chenyan Jiang
 . . . . . Briefly mention each technologies/techniques used in your project codebase that were not covered in the lectures/labs. Provide source code filename references to support your assertions and include reference material links (articles/blogs).
 
 ---------------------------------
-
 [model]: ./data.jpg
+[mainPage-withDrawAndSlide]:./public/ainPage-withDrawAndSlide.png
+[cardCastLink]: .public/draw-menu.png
+[cardLink]: .public/cardlink.png
+
+[mainPage-withDrawAndSlide]: .public/mainPage-withDrawAndSlide.png
+[draw]: .public/draw.png
+[firebase]: .public/firebase.png
+[draw-menu]: .public/draw-menu.png
+[movieDetail-showCastofThisMovie]: .public/movieDetail-showCastOfThisMovie.png
+[movieDetailCastDetails]: .public/movieDetailCastDetails.png
+[personPage]: .public/personPage.png
+[movieDetailPage-traller]: .public/movieDetailPage-traller.png
+[movieDetailPage-traller2]: .public/movieDetailPage-traller2.png
+[movieDetailPage-traller3]: .public/movieDetailPage-traller3.png
 [login]: .public/login.png
-[signUp]: public/signUp.png
+[signUp]: .public/signUp.png
 [movieDetail]: ./public/movieDetail.png
 [review]: ./public/review.png
-[reviewLink]: ./public/reviewLink.png
-[cardLink]: ./public/cardLink.png
+[reviewLink]: ./public/reviewlink.png
+[cardLink]: ./public/cardlink.png
+[movieDetail-SimilarMovie]: ./public/movieDetail-SimilarMovie.png
+[cardLink]: ./public/cardlink.png
 [stories]: ./public/storybook.png
 ---------------------------------
 https://dashboard.cypress.io/organizations/d39f3020-0fa9-4d9b-9208-1662c0d53dd5/projects
+
